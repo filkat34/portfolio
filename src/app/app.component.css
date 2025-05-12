@@ -1,0 +1,10 @@
+.nav-link {
+    font-size: 18px;
+    font-family: Oxanium;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+}
+
+.nav-link:hover {
+    color: #f56565;
+}
