@@ -50,7 +50,7 @@ projects = [
     {
       title : 'Portfolio',
       description : 'Mon portfolio d\'étudiant en développement.',
-      stack: 'Angular, TypeScript, HTML, CSS.',
+      stack: 'Angular, TypeScript, HTML, CSS, Tailwind.',
       stackicons: ['./assets/technologies/angular.svg',
         './assets/technologies/tailwind.svg',
         './assets/technologies/ts.svg',
