@@ -1,37 +1,34 @@
-<div class="flex-container">
-  <nav class="sticky top-0 flex justify-between items-center bg-white shadow-md p-4">
-  <!-- Left Section -->
-  <div>
-    <a routerLink="home">
-      <span class="nav-link" (mouseenter)="hover = true" (mouseleave)="hover = false" [innerHTML]="getAccueilText()">
-      </span>
-    </a>
-  </div>
+<div class="flex flex-col min-h-screen">
+  <!-- Navigation -->
+  <nav class="sticky top-0 z-10 flex justify-between items-center bg-white shadow-md p-4">
+    <!-- Left Section -->
+    <div>
+      <a routerLink="home">
+        <span class="nav-link" (mouseenter)="hover = true" (mouseleave)="hover = false" [innerHTML]="getAccueilText()">
+        </span>
+      </a>
+    </div>
 
-  <!-- Right Section -->
-  <div class="flex space-x-4 ml-auto">
-    <a routerLink="cv">
-      <span class="nav-link">
-        cv
-      </span>
-    </a>
-    <a routerLink="projets">
-      <span class="nav-link">
-        projets
-      </span>
-    </a>
-  </div>
-</nav>
+    <!-- Right Section -->
+    <div class="flex space-x-4 ml-auto">
+      <a routerLink="cv">
+        <span class="nav-link">cv</span>
+      </a>
+      <a routerLink="projets">
+        <span class="nav-link">projets</span>
+      </a>
+    </div>
+  </nav>
 
-  <!-- Main content -->
-  <main class="flex-grow">
+  <!-- Main Content -->
+  <main class="flex-grow flex items-center justify-center">
     <router-outlet></router-outlet>
   </main>
 
-
-  <footer class="sticky bottom-0 flex justify-center items-center bg-white shadow-md p-1">
+  <!-- Footer -->
+  <footer class="flex justify-center items-center bg-white shadow-md p-1">
     <a *ngFor="let icon of contactIcons" [href]="icon.href" [target]="icon.target" [rel]="icon.rel" class="mx-1">
-      <i [class]="icon.class + ' ' + icon.color +' opacity-60 hover:opacity-80 transition-opacity duration-200'"></i>
+      <i [class]="icon.class + ' ' + icon.color + ' opacity-60 hover:opacity-80 transition-opacity duration-200'"></i>
     </a>
   </footer>
 </div>

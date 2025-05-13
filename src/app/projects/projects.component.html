@@ -1,1 +1,57 @@
-<p>projects works!</p>
+<div class="flex flex-col min-h-screen p-4">
+  <!-- Titre -->
+  <h2 class="text-2xl font-bold text-center mb-4">Projets</h2>
+
+  <!-- Barre de Recherche -->
+  <div class="mb-4"> <!-- Adjusted margin-bottom -->
+    <input 
+      type="text" 
+      id="rechercheprojets" 
+      class="w-85 mx-auto block border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-1 focus:ring-blue-400" 
+      placeholder="Rechercher..." 
+      [(ngModel)]="searchTerm" 
+      (input)="filterProjects()" 
+    />
+  </div>
+
+  <!-- Contenu Principal -->
+  <div class="flex flex-col items-center flex-grow">
+    <!-- Message Aucun Projet Trouvé -->
+    <div *ngIf="filteredProjects.length === 0" class="text-center text-red-500 text-lg mt-4">
+      Aucun projet trouvé...
+    </div>
+
+    <!-- Grille des Projets -->
+    <div *ngIf="filteredProjects.length > 0" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full mt-4">
+      <div 
+        class="card bg-gray-50 opacity-80 rounded-lg shadow-md overflow-hidden flex flex-col transform transition-transform duration-200 hover:scale-105 hover:text-blue-600" 
+        *ngFor="let project of filteredProjects"
+      >
+        <div class="p-4 flex-grow">
+          <!-- Titre du Projet -->
+          <h5 class="text-lg font-bold text-center mb-2">{{ project.title }}</h5>
+          <!-- Description du Projet -->
+          <p class="text-sm text-center mb-4">{{ project.description }}</p>
+          <!-- Icônes de la Stack -->
+          <div class="flex justify-center flex-wrap gap-2">
+            <img 
+              *ngFor="let icon of project.stackicons" 
+              [src]="icon" 
+              alt="{{ project.stack }}" 
+              class="h-8 w-auto"
+            />
+          </div>
+        </div>
+        <!-- Lien GitHub -->
+        <div class="p-4 text-center">
+          <a 
+            href="{{ project.repolink }}" 
+            class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg transition duration-200"
+          >
+            Github
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

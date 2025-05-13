@@ -1,1 +1,32 @@
-<p>home works!</p>
+<div class="flex flex-col md:flex-row gap-4 p-4">
+    <!-- Présentation (gauche) -->
+    <div class="flex-1 bg-white p-4 opacity-90">
+        <div class="container p-3 text-center">
+            <h2 class="text-lg font-bold">Filippos Katsanos</h2>
+            <h4>étudiant en développement d'applications</h4>
+        </div>
+        <div class="container p-4 text-justify space-y-3 font-oxanium">
+            <p *ngFor="let item of aboutItems">{{ item }}</p>
+        </div>
+    </div>
+
+    <!-- Compétences (droite) -->
+    <div class="flex-1 bg-white p-4 opacity-90">
+         <h2 class="text-lg font-bold text-center p-3">Pile Technologique</h2>
+        <table class="table-auto w-full border-collapse border border-gray-300">
+            <tbody>
+                <tr *ngFor="let tech of techs">
+                    <!-- Tech Title -->
+                    <td class="border border-gray-300 p-2 font-bold">{{ tech.title }}</td>
+                    <!-- Tech Icons -->
+                    <td class="border border-gray-300 p-2">
+                        <div class="flex flex-wrap gap-2">
+                            <img *ngFor="let icon of tech.icons" [src]="icon" alt="{{ tech.title }}" class="m-1"
+                                style="max-height: 30px;">
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
