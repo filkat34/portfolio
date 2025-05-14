@@ -1,26 +1,39 @@
 <div class="flex flex-col md:flex-row gap-4 p-4">
-  <!-- Présentation (gauche) -->
-  <div class="flex-grow bg-white p-3 opacity-90">
+  <!-- Formations (gauche) -->
+  <div class="flex-1 basis-1/2 bg-white p-3 opacity-90">
     <div class="container p-3 text-center">
       <h2 class="text-lg font-bold">Formation</h2>
     </div>
     <div class="container p-4 text-justify space-y-3 font-oxanium">
-      <!-- Grille des Projets -->
+      <!-- Liste des formations -->
       <div class="grid grid-cols-1 gap-6 w-full mt-4">
-        <div 
-          class="card bg-gray-50 opacity-80 rounded-lg shadow-md overflow-hidden flex flex-col transform transition-transform duration-200 hover:scale-105 hover:text-blue-600"
-          *ngFor="let formation of formations"
-        >
+        <div
+          class="card bg-gray-50 opacity-90 rounded-lg shadow-md overflow-hidden flex flex-col transform transition-transform duration-200 hover:scale-105"
+          *ngFor="let formation of formations; let i = index">
           <div class="p-4 flex-grow">
             <!-- Date -->
             <h3 class="text-lg font-bold text-center mb-2">{{ formation.date }}</h3>
             <!-- Diplôme -->
-            <h5 class="text-lg font-bold text-center mb-2">{{ formation.organisme }} | {{ formation.diplome }}</h5>
-            <!-- Description -->
-            <p class="text-sm text-center mb-4">{{ formation.description }}</p>
-            <!-- Lien -->
-            <div class="text-center" *ngIf="formation.link">
+            <h4 class="text-lg font-bold text-center mb-2">{{ formation.diplome }}</h4>
+            <!-- Organisme -->
+            <h5 class="text-lg font-bold text-center mb-2">{{ formation.organisme }}</h5>
+            <!-- En savoir plus -->
+            <div class="flex justify-center items-center">
+              <button *ngIf="visibleDescriptionIndex !== i"
+                class="bg-blue-500 hover:bg-blue-700 text-white w-5 h-5 flex items-center justify-center rounded-full"
+                (click)="toggleFormation(i)">
+                +
+              </button>
+            </div>
+            <div *ngIf="visibleDescriptionIndex === i">
+              <!-- Description -->
+              <p class="text-sm text-justify mb-4" *ngIf="visibleDescriptionIndex === i">
+                {{ formation.description }}
+              </p>
+              <!-- Lien -->
+              <div class="text-center text-blue-500" *ngIf="formation.link">
                 <a [href]="formation.link.url" target="_blank" rel="noopener noreferrer">{{ formation.link.text }}</a>
+              </div>
             </div>
           </div>
         </div>
@@ -28,30 +41,39 @@
     </div>
   </div>
 
-  <!-- Compétences (droite) -->
-  <div class="flex-grow bg-white p-3 opacity-90">
+  <!-- Expériences (droite) -->
+  <div class="flex-1 basis-1/2 bg-white p-3 opacity-90">
     <div class="container p-3 text-center">
       <h2 class="text-lg font-bold">Experience</h2>
     </div>
     <div class="container p-4 text-justify space-y-3 font-oxanium">
-      <!-- Grille des Projets -->
+      <!-- Liste des -->
       <div class="grid grid-cols-1 gap-6 w-full mt-4">
-        <div 
-          class="card bg-gray-50 opacity-80 rounded-lg shadow-md overflow-hidden flex flex-col transform transition-transform duration-200 hover:scale-105 hover:text-blue-600"
-          *ngFor="let experience of experiences"
-        >
+        <div
+          class="card bg-gray-50 opacity-90 rounded-lg shadow-md overflow-hidden flex flex-col transform transition-transform duration-200 hover:scale-105"
+          *ngFor="let experience of experiences ; let i = index">
           <div class="p-4 flex-grow">
             <!-- Date -->
             <h3 class="text-lg font-bold text-center mb-2">{{ experience.date }}</h3>
+            <!-- Poste -->
+            <h4 class="text-lg font-bold text-center mb-2">{{ experience.poste }}</h4>
             <!-- Employeur -->
             <h5 class="text-lg font-bold text-center mb-2">{{ experience.employeur }}</h5>
-            <!-- Poste -->
-            <h6 class="text-lg font-bold text-center mb-2">{{ experience.poste }}</h6>
-            <!-- Description -->
-            <p class="text-sm text-center mb-4">{{ experience.description }}</p>
+            <!-- Bouton pour afficher/masquer -->
+            <div class="flex justify-center items-center">
+              <button *ngIf="visibleExperienceIndex !== i"
+                class="bg-orange-500 hover:bg-orange-700 text-white w-5 h-5 flex items-center justify-center rounded-full"
+                (click)="toggleExperience(i)">
+                +
+              </button>
+<div *ngIf="visibleExperienceIndex === i">
+        <!-- Description -->
+        <p class="text-sm text-justify mb-4">
+          {{ experience.description }}
+        </p>
+      </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>

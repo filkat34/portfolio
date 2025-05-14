@@ -3,7 +3,7 @@
     <div class="flex-1 bg-white p-4 opacity-90">
         <div class="container p-3 text-center">
             <h2 class="text-lg font-bold">Filippos Katsanos</h2>
-            <h4>étudiant en développement d'applications</h4>
+            <h4>&#123; apprenti développeur &#125;</h4>
         </div>
         <div class="container p-4 text-justify space-y-3 font-oxanium">
             <p *ngFor="let item of aboutItems">{{ item }}</p>
@@ -12,17 +12,16 @@
 
     <!-- Pile technologique -->
     <div class="flex-1 bg-white p-4 opacity-90">
-        
-        <table class="table-auto w-full border-collapse border border-gray-300">
+        <table class="table-auto p-4 border-collapse">
             <tbody>
                 <tr *ngFor="let tech of techs">
                     <!-- Tech Title -->
-                    <td class="border border-gray-300 p-2 font-bold">{{ tech.title }}</td>
+                    <td class="p-3 font-bold text text-blue-700">{{ tech.title }}</td>
                     <!-- Tech Icons -->
-                    <td class="border border-gray-300 p-2">
+                    <td class="p-3">
                         <div class="flex flex-wrap gap-2">
-                            <img *ngFor="let icon of tech.icons" [src]="icon" alt="{{ tech.title }}" class="m-1"
-                                style="max-height: 30px;">
+                            <span *ngFor="let texttech of tech.texttechs.slice().sort()" class="text-gray-700 text-sm font-semibold bg-orange-200 rounded-full px-2 py-1 m-1"
+                                style="max-height: 30px;">{{texttech}}</span>
                         </div>
                     </td>
                 </tr>

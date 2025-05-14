@@ -23,42 +23,28 @@ export class HomeComponent {
   techs = [
     {
       title: 'Langages',
-      icons: ['./assets/technologies/cs.svg',
-        './assets/technologies/python.svg',
-        './assets/technologies/java.svg',
-        './assets/technologies/ts.svg',
-        './assets/technologies/html.svg',
-        './assets/technologies/css.svg',
-        './assets/technologies/php.svg',]
+      texttechs: ['C#', 'Python', 'Java', 'TypeScript', 'HTML', 'CSS', 'PHP'],
     },
     {
       title: 'Frameworks',
-      icons: ['./assets/technologies/angular.svg',
-        './assets/technologies/tailwind.svg',
-        './assets/technologies/bootstrap.svg',
-      ]
+      texttechs: ['Angular', 'Bootstrap', 'Tailwind'],
+  
     },
     {
       title: 'IDE',
-      icons: ['./assets/technologies/vscode.svg',
-        './assets/technologies/visualstudio.svg',
-        './assets/technologies/eclipse.svg',
-        './assets/technologies/pycharm.svg',]
+      texttechs: ['Visual Studio', 'VS Code', 'Eclipse', 'PyCharm'],
     },
     {
       title: 'SGBD',
-      icons: ['./assets/technologies/mysql.svg',
-        './assets/technologies/postgresql.svg',
-        './assets/technologies/mongodb.svg',
-      ]
+      texttechs: ['MySQL', 'PostgreSQL', 'MongoDB'],
     },
     {
       title: 'CMS',
-      icons: ['./assets/technologies/wordpress.svg',]
+      texttechs: ['WordPress'],
     },
     {
       title: 'Collaboration',
-      icons: ['./assets/technologies/github.svg']
+      texttechs: ['GitHub'],
     }, 
   ];
 

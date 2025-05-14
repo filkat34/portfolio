@@ -33,22 +33,22 @@ export class CvComponent {
   formations = [
     {
       date: '2024-',
-      diplome: 'BTS',
+      diplome: 'Brevet de Technicien Supérieur',
       organisme: 'CNED',
-      description: `Services Informatiques aux Organisations, option : Solutions Logicielles et Applications Métiers (BTS SIO SLAM). Compétences : mise à 
+      description: `Services Informatiques aux Organisations, option Solutions Logicielles et Applications Métiers (BTS SIO SLAM). Compétences en cours d'acquisition : mise à 
                 disposition de services informatiques, gestion de données, conception, développement et la maintenance corrective ou évolutive d'applications ; 
                 cybersécurisation des solutions applicatives et de leur développement.`,
     },
     {
       date: '2023',
-      diplome: 'D.U.',
+      diplome: 'Diplôme Universitaire',
       organisme: `UPEC`,
       description: `Mention "Sciences cognitives pour l'éducation et la formation" à l'Université Paris-Est Créteil.`
     },
     {
       date: '2018',
       diplome: 'Doctorat',
-      organisme: `Univ. Paul Valéry`,
+      organisme: `Université Paul Valéry`,
       description: `Thèse en littératures comparées en cotutelle avec l'Université de Patras.`
     },
     {
@@ -103,6 +103,13 @@ export class CvComponent {
     },
   ];
 
+  visibleDescriptionIndex: number | null = 0; // Index de la description visible
+
+  toggleFormation(index: number): void {
+    // Si l'index est déjà visible, on le masque, sinon on l'affiche
+    this.visibleDescriptionIndex = this.visibleDescriptionIndex === index ? null : index;
+  }
+
   /**
    * @description
    * Affiche les expériences professionnelles
@@ -125,5 +132,11 @@ export class CvComponent {
       description: 'Allocataire moniteur de recherche. Travaux dirigés et cours magistraux de littérature et d\'expression-communication en licence. Un cetain nombre de mes travaux de recherche sont disponibles en ligne en accès ouvert ; mes travaux de thèse ont été publiés aux Presses Universitaires de Limoges sous le titre "La Littérature des mystères : poétique historique d\'un succès médiatique du XIXe siècle".'
     }
   ]
+
+  visibleExperienceIndex: number | null = 0; // Pour Expérience
+  
+  toggleExperience(index: number): void {
+    this.visibleExperienceIndex = this.visibleExperienceIndex === index ? null : index;
+  }
 
 }

@@ -7,6 +7,35 @@ body {
   -ms-overflow-style: none;
 }
 
+p {
+  font-family: 'Oxanium', sans-serif;
+  font-size: 18px;
+}
+
+h2{
+  color: #f56565;
+  font-weight: bolder;
+  font-size: 25px;
+}
+
+h3{
+  color: #f56565;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+h4{
+  color: #4169e1;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+h5{
+  color: purple;
+  font-weight :light;
+  font-size: 16px;
+}
+
 /* Cache scrollbar */
 
 body::-webkit-scrollbar, html::-webkit-scrollbar {
