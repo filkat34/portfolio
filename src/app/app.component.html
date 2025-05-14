@@ -1,10 +1,10 @@
 <div class="flex flex-col min-h-screen">
   <!-- Navigation -->
-  <nav class="sticky top-0 z-10 flex justify-between items-center bg-white shadow-md p-4">
+  <nav class="sticky top-0 z-10 flex justify-between items-center bg-white dark:text-purple-400 dark:bg-neutral-900 shadow-md dark:shadow-none p-4">
     <!-- Left Section -->
     <div>
       <a routerLink="home">
-        <span class="nav-link" (mouseenter)="hover = true" (mouseleave)="hover = false" [innerHTML]="getAccueilText()">
+        <span class="text-xl hover:text-orange-500 dark:hover:text-orange-300 transition-all duration-300 ease-in-out" (mouseenter)="hover = true" (mouseleave)="hover = false" [innerHTML]="getAccueilText()" >
         </span>
       </a>
     </div>
@@ -12,10 +12,10 @@
     <!-- Right Section -->
     <div class="flex space-x-4 ml-auto">
       <a routerLink="cv">
-        <span class="nav-link">cv</span>
+        <span class="text-xl hover:text-orange-500 dark:hover:text-orange-300 transition-all duration-300 ease-in-out">cv</span>
       </a>
       <a routerLink="projets">
-        <span class="nav-link">projets</span>
+        <span class="text-xl hover:text-orange-500 dark:hover:text-orange-300 transition-all duration-300 ease-in-out">projets</span>
       </a>
     </div>
   </nav>
@@ -25,10 +25,19 @@
     <router-outlet></router-outlet>
   </main>
 
-  <!-- Footer -->
-  <footer class="flex justify-center items-center bg-white shadow-md p-1">
-    <a *ngFor="let icon of contactIcons" [href]="icon.href" [target]="icon.target" [rel]="icon.rel" class="mx-1">
-      <i [class]="icon.class + ' ' + icon.color + ' opacity-60 hover:opacity-80 transition-opacity duration-200'"></i>
-    </a>
+  <footer class="relative flex justify-center items-center shadow-md p-1">
+    <!-- Contact Icons  -->
+    <div class="flex gap-2 p-1">
+      <a *ngFor="let icon of contactIcons" [href]="icon.href" [target]="icon.target" [rel]="icon.rel" class="mx-1">
+        <i [class]="icon.class + ' ' + icon.color + ' fa-xl opacity-60 hover:opacity-90 transition-opacity duration-200 dark:text-white'"></i>
+      </a>
+    </div>
+
+    <!-- Dark Mode Toggle -->
+    <button
+      class="absolute right-4 px-4 py-2 flex items-center gap-2 opacity-60 hover:opacity-80 transition-opacity duration-200 cursor-pointer"
+      (click)="toggleDarkMode()">
+      <i [class]="isDarkMode ? 'fas fa-sun fa-xl' : 'fas fa-moon fa-xl'"></i>
+    </button>
   </footer>
 </div>
