@@ -1,11 +1,11 @@
 <div class="flex flex-col md:flex-row gap-4 p-4">
     <!-- Présentation -->
-    <div class="flex-1 p-4 opacity-100">
+    <div class="flex-1 p-4 opacity-100 border-collapse">
         <div class="container p-3 text-center">
-            <h2 class="text-lg font-bold">Filippos Katsanos</h2>
-            <h4>&#123; apprenti développeur &#125;</h4>
+            <h2 class="text-3xl font-semibold text-orange-400 dark:text-yellow-200">Filippos Katsanos</h2>
+            <h4 class="text-xl font-semibold text-indigo-500 dark:text-green-300">&#123; apprenti développeur &#125;</h4>
         </div>
-        <div class="container p-4 text-justify space-y-3 font-oxanium">
+        <div class="container p-4 text-justify space-y-3 font-oxanium text-lg darkt:text-gray-400">
             <p *ngFor="let item of aboutItems">{{ item }}</p>
         </div>
     </div>
@@ -16,11 +16,12 @@
             <tbody>
                 <tr *ngFor="let tech of techs">
                     <!-- Tech Title -->
-                    <td class="p-3 font-bold text text-blue-700">{{ tech.title }}</td>
+                    <td class="p-3 font-bold text-indigo-500 dark:text-green-300">{{ tech.title }}</td>
                     <!-- Tech Icons -->
                     <td class="p-3">
                         <div class="flex flex-wrap gap-2">
-                            <span *ngFor="let texttech of tech.texttechs.slice().sort()" class="text-gray-700 text-sm font-semibold bg-orange-200 rounded-full px-2 py-1 m-1"
+                            <span *ngFor="let texttech of tech.texttechs.slice().sort()" 
+                            class="text-neutral-200 text-base font-semibold bg-indigo-500 rounded-full px-2 py-1 m-1 dark:bg-green-300 dark:text-neutral-700"
                                 style="max-height: 30px;">{{texttech}}</span>
                         </div>
                     </td>

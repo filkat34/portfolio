@@ -1,33 +1,31 @@
 <div class="flex flex-col md:flex-row gap-4 p-4">
   <!-- Formations (gauche) -->
-  <div class="flex-1 basis-1/2 bg-white p-3 opacity-90">
+  <div class="flex-1 basis-1/2 p-3 bg-neutral-200 dark:bg-neutral-800">
     <div class="container p-3 text-center">
-      <h2 class="text-lg font-bold">Formation</h2>
+      <h2 class="text-2xl font-bold text-red-400 dark:text-green-300">Formation</h2>
     </div>
     <div class="container p-4 text-justify space-y-3 font-oxanium">
       <!-- Liste des formations -->
-      <div class="grid grid-cols-1 gap-6 w-full mt-4">
+      <div class="grid grid-cols-1 gap-2 w-full mt-4">
         <div
-          class="card bg-gray-50 opacity-90 rounded-lg shadow-md overflow-hidden flex flex-col transform transition-transform duration-200 hover:scale-105"
+          class="card bg-neutral-50 dark:bg-neutral-700 rounded-lg shadow-md overflow-hidden flex flex-col transform transition-transform duration-200 hover:scale-102"
           *ngFor="let formation of formations; let i = index">
           <div class="p-4 flex-grow">
             <!-- Date -->
-            <h3 class="text-lg font-bold text-center mb-2">{{ formation.date }}</h3>
-            <!-- Diplôme -->
-            <h4 class="text-lg font-bold text-center mb-2">{{ formation.diplome }}</h4>
-            <!-- Organisme -->
-            <h5 class="text-lg font-bold text-center mb-2">{{ formation.organisme }}</h5>
+            <h3 class="text-2xl font-bold text-center text-red-400 dark:text-green-300 mb-2">{{ formation.date }}</h3>
+            <!-- Diplôme | Organisme -->
+            <h4 class="text-lg font-bold text-center text-red-400 dark:text-green-300 mb-2">{{ formation.diplome }} | {{ formation.organisme }}</h4>
             <!-- En savoir plus -->
             <div class="flex justify-center items-center">
               <button *ngIf="visibleDescriptionIndex !== i"
-                class="bg-blue-500 hover:bg-blue-700 text-white w-5 h-5 flex items-center justify-center rounded-full"
+                class="bg-orange-600 hover:bg-orange-400 dark:bg-green-300 dark:hover:dark:bg-green-200 text-white dark:text-neutral-700 w-5 h-5 flex items-center justify-center rounded-full"
                 (click)="toggleFormation(i)">
                 +
               </button>
             </div>
             <div *ngIf="visibleDescriptionIndex === i">
               <!-- Description -->
-              <p class="text-sm text-justify mb-4" *ngIf="visibleDescriptionIndex === i">
+              <p class="text-base text-center mb-4" *ngIf="visibleDescriptionIndex === i">
                 {{ formation.description }}
               </p>
               <!-- Lien -->
@@ -42,33 +40,33 @@
   </div>
 
   <!-- Expériences (droite) -->
-  <div class="flex-1 basis-1/2 bg-white p-3 opacity-90">
+  <div class="flex-1 basis-1/2 p-3 bg-neutral-200 dark:bg-neutral-800">
     <div class="container p-3 text-center">
-      <h2 class="text-lg font-bold">Experience</h2>
+      <h2 class="font-bold text-2xl text-indigo-500 dark:text-yellow-200">Experience</h2>
     </div>
     <div class="container p-4 text-justify space-y-3 font-oxanium">
       <!-- Liste des -->
-      <div class="grid grid-cols-1 gap-6 w-full mt-4">
+      <div class="grid grid-cols-1 gap-2 w-full mt-4">
         <div
-          class="card bg-gray-50 opacity-90 rounded-lg shadow-md overflow-hidden flex flex-col transform transition-transform duration-200 hover:scale-105"
+          class="card bg-neutral-50 dark:bg-neutral-700 opacity-90 hover:opacity-100 rounded-lg shadow-md overflow-hidden flex flex-col transform transition-transform duration-200 hover:scale-102"
           *ngFor="let experience of experiences ; let i = index">
-          <div class="p-4 flex-grow">
+          <div class="p-4 flex-grow text">
             <!-- Date -->
-            <h3 class="text-lg font-bold text-center mb-2">{{ experience.date }}</h3>
+            <h3 class="text-2xl text-indigo-500 dark:text-yellow-200 font-bold text-center mb-2">{{ experience.date }}</h3>
             <!-- Poste -->
-            <h4 class="text-lg font-bold text-center mb-2">{{ experience.poste }}</h4>
+            <h4 class="text-lg font-bold text-indigo-500 dark:text-yellow-200 text-center mb-2">{{ experience.poste }}</h4>
             <!-- Employeur -->
-            <h5 class="text-lg font-bold text-center mb-2">{{ experience.employeur }}</h5>
+            <h5 class="text-lg font-semibold text-indigo-500 dark:text-yellow-200 text-center mb-2">{{ experience.employeur }}</h5>
             <!-- Bouton pour afficher/masquer -->
             <div class="flex justify-center items-center">
               <button *ngIf="visibleExperienceIndex !== i"
-                class="bg-orange-500 hover:bg-orange-700 text-white w-5 h-5 flex items-center justify-center rounded-full"
+                class="bg-indigo-600 hover:bg-indigo-500 dark:bg-yellow-300 dark:hover:bg-yellow-200 text-white dark:text-neutral-700 w-5 h-5 flex items-center justify-center rounded-full"
                 (click)="toggleExperience(i)">
                 +
               </button>
 <div *ngIf="visibleExperienceIndex === i">
         <!-- Description -->
-        <p class="text-sm text-justify mb-4">
+        <p class="text-base text-center mb-4">
           {{ experience.description }}
         </p>
       </div>

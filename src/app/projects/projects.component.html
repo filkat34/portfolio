@@ -1,11 +1,11 @@
 <div class="flex flex-col min-h-screen p-4">
   <!-- Titre -->
-  <h2 class="text-2xl font-bold text-center mb-4">Projets</h2>
+  <h2 class="text-2xl font-bold text-center mb-4 text-blue-500 dark:text-yellow-200">Projets</h2>
 
   <!-- Barre de Recherche -->
   <div class="mb-4">
     <input type="text" id="rechercheprojets"
-      class="w-85 mx-auto block border border-gray-400 rounded-lg p-2 focus:outline-none focus:ring-1 focus:ring-blue-400 placeholder-gray-400"
+      class="w-85 mx-auto block border border-blue-400 dark:border-yellow-300 rounded-lg p-2 focus:outline-none focus:ring-1 focus:ring-blue-400 placeholder-neutral-500 dark:placeholder-green-700"
       placeholder="Rechercher par nom, tech, description..." [(ngModel)]="searchTerm" (input)="filterProjects()" />
   </div>
 
@@ -19,7 +19,7 @@
     <!-- Grille des Projets -->
     <div *ngIf="filteredProjects.length > 0" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full mt-4">
       <div
-        class="card bg-gray-50 opacity-80 rounded-lg shadow-md overflow-hidden flex flex-col transform transition-transform duration-200 hover:scale-105 hover:text-blue-600"
+        class="card bg-gray-50 dark:bg-neutral-700 rounded-lg shadow-md overflow-hidden flex flex-col transform transition-transform duration-200 hover:scale-105 hover:text-blue-600 dark:hover:text-yellow-200"
         *ngFor="let project of filteredProjects">
         <div class="p-4 flex-grow">
           <!-- Titre du Projet -->
@@ -29,7 +29,7 @@
           <!-- Technologies uttilisées -->
           <div class="flex justify-center flex-wrap gap-2">
             <span *ngFor="let tech of project.techs.slice().sort()"
-              class="text-gray-700 text-sm font-semibold bg-orange-200 rounded-full px-2 py-1 m-1">
+              class="text-neutral-700 text-sm font-semibold bg-orange-200 dark:bg-green-300 rounded-full px-2 py-1 m-1">
               {{ tech }}
             </span>
           </div>
@@ -37,7 +37,7 @@
         <!-- Lien GitHub -->
         <div class="p-4 text-center">
           <a href="{{ project.repolink }}"
-            class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg transition duration-200">
+            class="bg-blue-600 hover:bg-blue-500 dark:bg-yellow-400 dark:hover:bg-yellow-300 text-white dark:text-neutral-700 font-semibold py-2 px-4 rounded-lg transition duration-200">
             Github
           </a>
         </div>
