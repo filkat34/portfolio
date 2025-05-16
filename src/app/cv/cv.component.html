@@ -11,7 +11,7 @@
           <h3 class="text-2xl font-bold text-center text-red-400 dark:text-green-300 mb-2">{{ group.date }}</h3>
           <div class="grid grid-cols-1 gap-2 w-full">
             <div
-              class="cursor-pointer card bg-neutral-50 dark:bg-neutral-700 rounded-lg shadow-md overflow-hidden flex flex-col transform transition-transform duration-200 hover:scale-102 darkt:text-gray-400"
+              class="cursor-pointer card border border-black dark:border-neutral-100 bg-neutral-100 dark:bg-neutral-700 shadow-md overflow-hidden flex flex-col transform transition-transform duration-200 hover:scale-102 darkt:text-gray-400"
               *ngFor="let formation of group.items" (click)="openFormationModal(formation)">
               <div class="p-4 flex-grow">
                 <h5 class="text-lg font-bold text-center mb-2">{{ formation.diplome }}</h5>
@@ -32,7 +32,7 @@
         <!-- Liste des -->
         <div class="grid grid-cols-1 gap-2 w-full mt-4">
           <div
-            class="cursor-pointer card bg-neutral-50 dark:bg-neutral-700 opacity-90 hover:opacity-100 rounded-lg shadow-md overflow-hidden flex flex-col transform transition-transform duration-200 hover:scale-102"
+            class="cursor-pointer border border-black dark:border-neutral-100 bg-neutral-100 dark:bg-neutral-700 opacity-90 hover:opacity-100 shadow-md overflow-hidden flex flex-col transform transition-transform duration-200 hover:scale-102"
             *ngFor="let experience of experiences ; let i = index" (click)="openExperienceModal(experience)">
             <div class="p-4 flex-grow text">
               <!-- Poste -->
@@ -60,14 +60,13 @@
 
   <!-- Formation Modal -->
   <div *ngIf="selectedFormation" class="fixed inset-0 z-50 flex items-center justify-center" (click)="closeModal()">
-    <div class="bg-neutral-100 dark:bg-neutral-700 rounded-lg shadow-lg p-6 max-w-lg w-full relative"
+    <div class="bg-neutral-100 dark:bg-neutral-700 shadow-lg p-4 w-[90vw] md:w-[70vw] max-w-3xl
+           max-h-[calc(100vh-3.5rem)] md:max-h-[calc(100vh-8rem)] overflow-y-scroll relative mt-4 mb-4 md:mt-16 md:mb-16 border border-black dark:border-neutral-100"
       (click)="$event.stopPropagation()">
-      <button class="absolute top-2 right-2 text-2xl" (click)="closeModal()">&times;</button>
-      <h3 class="text-2xl text-center font-bold mb-2">{{ selectedFormation.date }}</h3>
-      <h4 class="text-xl text-center font-bold mb-2">{{ selectedFormation.diplome }}</h4>
-      <h4 class="text-xl text-center font-semibold mb-2">{{ selectedFormation.mention }}</h4>
-      <h5 class="text-lg text-center font-semibold mb-2">{{ selectedFormation.etablissement }}</h5>
-      <p class="mb-4 text-justify">{{ selectedFormation.description }}</p>
+      <button class="absolute top-2 right-2 text-2xl font-bold" (click)="closeModal()">&times;</button><br>
+      <h4 class="text-2xl text-center font-bold mb-2 text-red-400 dark:text-green-300">{{ selectedFormation.diplome }} : {{ selectedFormation.mention }}</h4>
+      <h4 class="text-xl text-center font-semibold mb-2">{{ selectedFormation.date }} | {{ selectedFormation.organisme }}</h4><br>
+      <p class="mb-4 text-justify" [innerHTML]="selectedFormation.description"></p>
       <div *ngIf="selectedFormation.link" class="text-center text-blue-500">
         <a [href]="selectedFormation.link.url" target="_blank" rel="noopener noreferrer">{{ selectedFormation.link.text
           }}</a>
@@ -77,10 +76,11 @@
 
   <!-- Experience Modal -->
   <div *ngIf="selectedExperience" class="fixed inset-0 z-50 flex items-center justify-center" (click)="closeModal()">
-    <div class="bg-neutral-100 dark:bg-neutral-700 rounded-lg shadow-lg p-6 max-w-lg w-full relative"
+    <div class="bg-neutral-100 dark:bg-neutral-700 shadow-lg p-4 w-[90vw] md:w-[70vw] max-w-3xl
+           max-h-[calc(100vh-3.5rem)] md:max-h-[calc(100vh-8rem)] overflow-y-scroll relative mt-4 mb-4 md:mt-16 md:mb-16 border border-black dark:border-neutral-100"
       (click)="$event.stopPropagation()">
-      <button class="absolute top-2 right-2 text-2xl" (click)="closeModal()">&times;</button>
-      <h3 class="text-2xl mb-2 text-center font-bold">{{ selectedExperience.poste }}</h3>
+      <button class="absolute top-2 right-2 text-2xl font-bold" (click)="closeModal()">&times;</button><br>
+      <h3 class="text-2xl mb-2 text-center font-bold text-indigo-500 dark:text-yellow-200">{{ selectedExperience.poste }}</h3>
       <h5 class="text-lg font-semibold mb-2 text-center">{{ selectedExperience.employeur }}</h5>
       <h3 class="text-lg mb-2 text-center">{{ selectedExperience.datedeb.slice(0, 4) }} - {{ selectedExperience.datefin === 'présent' ? 'présent' : selectedExperience.datefin.slice(0, 4) }} </h3>
       <p class="mb-4 text-justify">{{ selectedExperience.description }}</p>
