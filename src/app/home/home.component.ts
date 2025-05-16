@@ -9,6 +9,9 @@ import { Component } from '@angular/core';
 })
 export class HomeComponent {
 
+  showContent = false; // Variable pour contrôler la visibilité de l'accueil
+  isHovering = false; // Variable pour contrôler l'effet de survol de l'accueil
+
   aboutItems = [
     `Étudiant en informatique, docteur et professeur de lettres, j'aime apprendre, résoudre
   des problèmes et travailler en équipe.`,

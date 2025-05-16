@@ -1,6 +1,6 @@
 <div class="flex flex-col min-h-screen">
   <!-- Navigation -->
-  <nav class="sticky top-0 z-50 flex justify-between items-center dark:text-neutral-200 shadow-md p-4 bg-neutral-200 dark:bg-neutral-800">
+  <nav class="sticky top-0 z-50 flex justify-between items-center bg-neutral-100 dark:bg-neutral-800 dark:text-neutral-200 p-4">
     <!-- Left Section -->
     <div>
       <a routerLink="home">
@@ -25,18 +25,18 @@
     <router-outlet></router-outlet>
   </main>
 
-  <footer class="relative flex justify-center items-center shadow-md p-1">
+  <footer class="relative flex justify-center items-center p-1">
     <!-- Contact Icons  -->
     <div class="flex gap-2 p-1">
-      <a *ngFor="let icon of contactIcons" [href]="icon.href" [target]="icon.target" [rel]="icon.rel" class="mx-1">
+      <a *ngFor="let icon of contactIcons" [href]="icon.href" [target]="icon.target" [rel]="icon.rel" [attr.aria-label]="icon.label" class="mx-1">
         <i [class]="icon.class + ' ' + icon.color + ' fa-xl opacity-60 hover:opacity-90 transition-opacity duration-200 dark:text-white'"></i>
       </a>
     </div>
 
     <!-- Dark Mode Toggle -->
     <button
-      class="absolute right-4 px-4 py-2 flex items-center gap-2 opacity-60 hover:opacity-80 transition-opacity duration-200 cursor-pointer"
-      (click)="toggleDarkMode()">
+      class="absolute right-4 px-4 py-2 flex items-center gap-2 opacity-60 hover:opacity-80 transition-opacity duration-200 cursor-pointer dark:text-yellow-400"
+      (click)="toggleDarkMode()" aria-label="Activer/desactiver mode sombre">
       <i [class]="isDarkMode ? 'fas fa-sun fa-xl' : 'fas fa-moon fa-xl'"></i>
     </button>
   </footer>

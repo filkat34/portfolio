@@ -20,21 +20,24 @@ export class AppComponent {
       target: '_blank',
       rel: 'noopener noreferrer',
       class: 'fab fa-github fa-l',
-      color: 'text-black'
+      color: 'text-black',
+      label: 'GitHub',
     },
     {
       href: 'mailto:filippos.katsanos@protonmail.com',
       target: '_blank',
       rel: 'noopener noreferrer',
       class: 'fas fa-envelope fa-l',
-      color: 'text-black'
+      color: 'text-black',
+      label: 'Email',
     },
     {
       href: 'https://www.linkedin.com/in/fkatsanos/',
       target: '_blank',
       rel: 'noopener noreferrer',
       class: 'fab fa-linkedin fa-l',
-      color: 'text-black'
+      color: 'text-black',
+      label: 'LinkedIn',
     },
   ];
 

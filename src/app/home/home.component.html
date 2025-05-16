@@ -1,9 +1,16 @@
 <div class="flex flex-col md:flex-row gap-4 p-4">
+    <!-- Texte accueil -->
+    <div *ngIf="!showContent" class="text-center cursor-pointer select-none text-7xl hover:text-orange-500 transition-all duration-500 ease-in-out"
+        (mouseenter)="isHovering = true" (mouseleave)="isHovering = false" (click)="showContent = true">
+        {{ isHovering ? '&lt;étudiant en dev&gt;' : '&lt;filippos katsanos&gt;' }}
+    </div>
+
     <!-- Présentation -->
-    <div class="flex-1 p-4 border-collapse">
+    <div *ngIf="showContent" class="flex-1 p-4 border-collapse">
         <div class="container p-3 text-center">
-            <h2 class="text-3xl font-semibold text-orange-400 dark:text-yellow-200">Filippos Katsanos</h2>
-            <h4 class="text-xl font-semibold text-indigo-500 dark:text-green-300">&#123; apprenti développeur &#125;</h4>
+            <h2 class="text-3xl font-bold text-blue-600 dark:text-yellow-200">Filippos Katsanos</h2>
+            <h4 class="text-2xl font-semibold text-orange-500 dark:text-green-300">&#123; apprenti développeur &#125;
+            </h4>
         </div>
         <div class="container p-4 text-justify space-y-3 font-oxanium text-lg dark:text-neutral-200">
             <p *ngFor="let item of aboutItems">{{ item }}</p>
@@ -11,17 +18,15 @@
     </div>
 
     <!-- Pile technologique -->
-    <div class="flex-1 p-4">
+    <div *ngIf="showContent" class="flex-1 p-4">
         <table class="table-auto p-4 border-collapse">
             <tbody>
                 <tr *ngFor="let tech of techs">
-                    <!-- Tech Title -->
-                    <td class="p-3 font-bold text-indigo-500 dark:text-green-300">{{ tech.title }}</td>
-                    <!-- Tech Icons -->
+                    <td class="p-3 text-lg font-bold">{{ tech.title }}</td>
                     <td class="p-3">
                         <div class="flex flex-wrap gap-2">
-                            <span *ngFor="let texttech of tech.texttechs.slice().sort()" 
-                            class="text-neutral-100 text-base font-semibold bg-indigo-500 rounded-full px-2 py-1 m-1 dark:bg-green-300 dark:text-neutral-700"
+                            <span *ngFor="let texttech of tech.texttechs.slice().sort()"
+                                class="text-neutral-800 dark:text-neutral-800 text-base font-semibold bg-neutral-100 rounded-full px-2 py-1 m-1 dark:bg-neutral-100 border"
                                 style="max-height: 30px;">{{texttech}}</span>
                         </div>
                     </td>
