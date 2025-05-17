@@ -9,9 +9,16 @@ import { Component } from '@angular/core';
 })
 export class HomeComponent {
 
+  /**
+   * Variables de la classe HomeComponent
+   */
   showContent = false; // Variable pour contrôler la visibilité de l'accueil
   isHovering = false; // Variable pour contrôler l'effet de survol de l'accueil
 
+  /**
+   * Texte de l'accueil
+   * @description Texte d'accueil affiché sur la page d'accueil
+   */
   aboutItems = [
     `Étudiant en informatique, docteur et professeur de lettres, j'aime apprendre, résoudre
   des problèmes et travailler en équipe.`,
@@ -23,6 +30,10 @@ export class HomeComponent {
   de langages informatiques plus abstraits.`
   ];
 
+  /**
+   * Pile technologique
+   * @description Liste des technologies utilisées dans le projet
+   */
   techs = [
     {
       title: 'Langages',

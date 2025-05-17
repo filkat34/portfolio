@@ -1,16 +1,18 @@
-<div class="flex flex-col md:flex-row gap-4 p-4">
-    <!-- Texte accueil -->
-    <div *ngIf="!showContent" class="text-center cursor-pointer select-none text-7xl hover:text-orange-500 transition-all duration-500 ease-in-out"
+<!-- Accueil : nom prénom -->
+<div *ngIf="!showContent" class="flex flex-1 items-center justify-center">
+    <div class="text-center dark:text-green-300 select-none text-6xl hover:text-orange-500 dark:hover:text-amber-200 transition-all duration-500 ease-in-out cursor-pointer"
         (mouseenter)="isHovering = true" (mouseleave)="isHovering = false" (click)="showContent = true">
         {{ isHovering ? '&lt;étudiant en dev&gt;' : '&lt;filippos katsanos&gt;' }}
     </div>
+</div>
 
+<!-- Présentation + pile technologique -->
+<div *ngIf="showContent" class="flex flex-col md:flex-row gap-4 flex-1 items-center justify-center px-4">
     <!-- Présentation -->
-    <div *ngIf="showContent" class="flex-1 p-4 border-collapse">
+    <div class="flex-1 p-4 border-collapse">
         <div class="container p-3 text-center">
-            <h2 class="text-3xl font-bold text-blue-600 dark:text-yellow-200">Filippos Katsanos</h2>
-            <h4 class="text-2xl font-semibold text-orange-500 dark:text-green-300">&#123; apprenti développeur &#125;
-            </h4>
+            <h2 class="text-3xl font-bold text-blue-600 dark:text-amber-200">Filippos Katsanos</h2>
+            <h4 class="text-2xl font-semibold text-orange-500 dark:text-green-300">&#123;apprenti développeur&#125;</h4>
         </div>
         <div class="container p-4 text-justify space-y-3 font-oxanium text-lg dark:text-neutral-200">
             <p *ngFor="let item of aboutItems">{{ item }}</p>
@@ -18,7 +20,7 @@
     </div>
 
     <!-- Pile technologique -->
-    <div *ngIf="showContent" class="flex-1 p-4">
+    <div class="flex-1 p-4">
         <table class="table-auto p-4 border-collapse">
             <tbody>
                 <tr *ngFor="let tech of techs">

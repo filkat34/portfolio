@@ -9,11 +9,56 @@ import { Router, RouterLink, RouterOutlet } from '@angular/router';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
+
+  /**
+   * Initialisations
+   * @param router 
+   * @description initialise routeur et activation du mode sombre par défaut.
+   */
+  constructor(private router: Router) {
+    document.documentElement.classList.add('dark');//Active le mode sombre par défaut
+   }
+
+  /**
+   * Variables
+   */
   title = 'Portfolio F. Katsanos';
-  constructor(private router: Router) { }
+  hover: boolean = false;// Variable pour contrôler l'affichage au survol
+  isDarkMode = true; // Par défaut, le mode sombre est activé
 
-  hover: boolean = false; // État du survol
 
+//Vérifier si la route actuelle est la page d'accueil
+  isHomeRouteActive(): boolean {
+    return this.router.url === '/home';
+  }
+
+  //Gérer l'effet de survol de l'accueil
+  getAccueilText(): string {
+    if (!this.isHomeRouteActive()) {
+      return this.hover ? '&lt;Accueil/&gt;' : '&lt;/&gt;';
+    }
+    return '&lt;/&gt;';
+  }
+
+  /**
+   * Fonction pour gérer le mode sombre
+   */
+  toggleDarkMode() {
+    this.isDarkMode = !this.isDarkMode;
+    const htmlElement = document.documentElement;
+
+    if (this.isDarkMode) {
+      htmlElement.classList.add('dark'); // Ajoute la classe "dark" pour activer le mode sombre
+      console.log('Mode sombre activé');
+    } else {
+      htmlElement.classList.remove('dark'); // Supprime la classe "dark" pour revenir au mode clair
+      console.log('Mode sombre désactivé')
+    };
+  }
+
+  /**
+   * Icones de contact
+   */
   contactIcons = [
     {
       href: 'https://github.com/filkat34',
@@ -40,31 +85,4 @@ export class AppComponent {
       label: 'LinkedIn',
     },
   ];
-
-
-  isHomeRouteActive(): boolean {
-    return this.router.url === '/home';
-  }
-
-  getAccueilText(): string {
-    if (!this.isHomeRouteActive()) {
-      return this.hover ? '&lt;Accueil/&gt;' : '&lt;/&gt;';
-    }
-    return '&lt;Accueil/&gt;';
-  }
-
-  isDarkMode = false; // Par défaut, le mode clair est activé
-
-  toggleDarkMode() {
-    this.isDarkMode = !this.isDarkMode;
-    const htmlElement = document.documentElement;
-
-    if (this.isDarkMode) {
-      htmlElement.classList.add('dark'); // Ajoute la classe "dark" pour activer le mode sombre
-      console.log('Mode sombre activé');
-    } else {
-      htmlElement.classList.remove('dark'); // Supprime la classe "dark" pour revenir au mode clair
-      console.log('Mode sombre désactivé')
-    };
-  }
 }

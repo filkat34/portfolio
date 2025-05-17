@@ -50,7 +50,9 @@ projects = [
   searchTerm: string = ''; // Terme de recherche
   filteredProjects = this.projects; // Liste des projets filtrés
 
-  // Fonction pour filtrer les projets
+  /**
+   * Fonction pour filtrer les projets
+   */
   filterProjects(): void {
     const term = this.searchTerm.toLowerCase();
     this.filteredProjects = this.projects.filter(project =>

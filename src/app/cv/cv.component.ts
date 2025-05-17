@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 
+
 @Component({
   selector: 'app-cv',
   imports: [CommonModule],
@@ -27,28 +28,34 @@ export class CvComponent {
   selectedExperience: any = null;
 
   /**
-   * Ouvre la modale de formation
+   * Ouvre la modale de formation et désactive le défilement en arrière-plan
    * @param formation 
    */
   openFormationModal(formation: any) {
     this.selectedFormation = formation;
+    document.body.classList.add('overflow-hidden');
+    document.documentElement.classList.add('overflow-hidden');
   }
 
   /**
-   * Ouvre la modale d'expérience
+   * Ouvre la modale d'expérience et désactive le défilement en arrière-plan
    * @param experience 
    */
   openExperienceModal(experience: any) {
     this.selectedExperience = experience;
+    document.body.classList.add('overflow-hidden');
+    document.documentElement.classList.add('overflow-hidden'); // fo
   }
 
   /**
-   * Ferme la modale
+   * Ferme la modale et réactive le défilement
    * @returns {void}
    */
   closeModal() {
     this.selectedFormation = null;
     this.selectedExperience = null;
+    document.body.classList.remove('overflow-hidden');
+    document.documentElement.classList.remove('overflow-hidden');
   }
 
   /**
