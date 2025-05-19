@@ -11,16 +11,6 @@ import { Component } from '@angular/core';
 export class CvComponent {
 
   /**
-   * Initialisations
-   * Tri des formations et expériences par date
-   * @returns {void}
-   */
-  ngOnInit(): void {
-    this.formations.sort((a, b) => parseInt(b.date) - parseInt(a.date));
-    this.experiences.sort((a, b) => parseInt(b.datedeb) - parseInt(a.datedeb));
-  }
-
-  /**
    * Variables de gestion des modales
    * @description
    */
@@ -59,8 +49,8 @@ export class CvComponent {
   }
 
   /**
-   * @description
    * Regroupe les formations par date pour affichage
+   * @description
    * @returns {Array} - Un tableau d'objets contenant la date et les formations associées
    */
   get formationsByDate() {
@@ -72,17 +62,29 @@ export class CvComponent {
       groups[formation.date].push(formation);
     }
     return Object.entries(groups)
-      .sort((a, b) => {
-        // Handle possible non-numeric dates like '2016-'
-        const aNum = parseInt(a[0]);
-        const bNum = parseInt(b[0]);
-        if (isNaN(aNum) && isNaN(bNum)) return 0;
-        if (isNaN(aNum)) return 1;
-        if (isNaN(bNum)) return -1;
-        return bNum - aNum;
-      })
+      .sort((a, b) => parseInt(b[0]) - parseInt(a[0])) // Sort by year descending
       .map(([date, items]) => ({ date, items }));
   }
+
+  /**
+   * Regroupe les expériences par date pour affichage
+   * @description
+   * @returns {Array} - Un tableau d'objets contenant la date et les expériences associées
+   */
+  get experiencesByDate() {
+    const groups: { [year: string]: any[] } = {};
+    for (const experience of this.experiences) {
+      const year = experience.datedeb.slice(0, 4); // Extract the year
+      if (!groups[year]) {
+        groups[year] = [];
+      }
+      groups[year].push(experience);
+    }
+    return Object.entries(groups)
+      .sort((a, b) => parseInt(b[0]) - parseInt(a[0])) // Sort by year descending
+      .map(([date, items]) => ({ date, items }));
+  }
+
 
   /**
    * Récupère la date actuelle
