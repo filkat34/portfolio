@@ -10,19 +10,20 @@ import { FormsModule } from '@angular/forms';
 })
 export class ProjectsComponent {
 
-/**
-   * @description
-   * Affiche les projets réalisés
-   * @param {string} title - Le titre du projet
-   * @param {string} description - La description du projet
-   * @param {string} stack - La pile technologique utilisée
-   * @param {string[]} stackicons - Les icônes de la pile technologique
-   * @param {string} repolink - Le lien vers le dépôt du projet
-   */
-projects = [
+  /**
+     * @description
+     * Affiche les projets réalisés
+     * @param {string} title - Le titre du projet
+     * @param {string} description - La description du projet
+     * @param {string} stack - La pile technologique utilisée
+     * @param {string[]} stackicons - Les icônes de la pile technologique
+     * @param {string} repolink - Le lien vers le dépôt du projet
+     */
+  projects = [
     {
       title: 'Mediatek86',
-      description: 'Application bureau windows de ressources humaines (POO, MVC, Winforms, authentification).',
+      description: 'Application bureau windows de ressources humaines (POO, MVC, Winforms, authentification) codée\
+      dans le cadre des "ateliers de professionalisation" de la préparation au BTS SIO (1e année).',
       techs: ['C#', 'Winforms', 'SQL'],
       repolink: 'https://github.com/filkat34/MediaTek86',
 
@@ -36,26 +37,32 @@ projects = [
     {
       title: 'LitToolkit',
       description: 'Application Web comportant un ensemble d\'outils pour l\'enseignement des lettres.',
-      techs: ['Angular', 'Bootstrap', 'TypeScript', 'HTML', 'CSS'],
+      techs: ['Angular', 'Bootstrap', 'TypeScript'],
       repolink: 'https://github.com/filkat34/LitToolkit',
     },
     {
-      title : 'Portfolio',
-      description : 'Mon portfolio d\'étudiant en développement.',
-      techs: ['Angular', 'TypeScript', 'HTML', 'CSS', 'Tailwind'],
+      title: 'Portfolio',
+      description: 'Mon portfolio d\'étudiant en développement.',
+      techs: ['Angular', 'TypeScript', 'Tailwind'],
       repolink: 'https://github.com/filkat34/portfolio'
+    },
+    {
+      title: 'Repartitor',
+      description: 'Application de gestion permettant de constituer les services d\'une équipe d\'enseignement.',
+      techs: ['Angular', 'TypeScript', 'Tailwind', 'IndexedDB'],
+      repolink: 'https://github.com/filkat34/repartitor-ng'
     }
   ]
 
-  searchTerm: string = ''; // Terme de recherche
-  filteredProjects = this.projects; // Liste des projets filtrés
+  // Trie la liste des projets dès l'initialisation
+  sortedProjects = this.projects.slice().sort((a, b) => a.title.localeCompare(b.title));
 
-  /**
-   * Fonction pour filtrer les projets
-   */
+  searchTerm: string = '';
+  filteredProjects = this.sortedProjects; // Utilise la liste triée dès le départ
+
   filterProjects(): void {
     const term = this.searchTerm.toLowerCase();
-    this.filteredProjects = this.projects.filter(project =>
+    this.filteredProjects = this.sortedProjects.filter(project =>
       project.title.toLowerCase().includes(term) ||
       project.description.toLowerCase().includes(term) ||
       project.techs.some(tech => tech.toLowerCase().includes(term))
