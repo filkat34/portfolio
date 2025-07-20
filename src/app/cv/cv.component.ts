@@ -19,7 +19,7 @@ export class CvComponent {
 
   /**
    * Ouvre la modale de formation et désactive le défilement en arrière-plan
-   * @param formation 
+   * @param formation
    */
   openFormationModal(formation: any) {
     this.selectedFormation = formation;
@@ -29,7 +29,7 @@ export class CvComponent {
 
   /**
    * Ouvre la modale d'expérience et désactive le défilement en arrière-plan
-   * @param experience 
+   * @param experience
    */
   openExperienceModal(experience: any) {
     this.selectedExperience = experience;
@@ -100,9 +100,9 @@ export class CvComponent {
 
   /**
    * Calcule la durée d'expérience entre deux dates
-   * @param datedeb 
-   * @param datefin 
-   * @returns 
+   * @param datedeb
+   * @param datefin
+   * @returns
    */
   getExperienceDuration(datedeb: string, datefin: string): string {
     if (!datedeb || !datefin) return '';
@@ -143,30 +143,30 @@ export class CvComponent {
       mention: 'Solutions Logicielles et Applications Métiers',
       organisme: 'CNED',
       description: `
-  <p>La formation diplômante BTS Services Informatiques aux Organisations 
-                (option&nbsp;: Solutions Logicielles et Applications Métiers) permet, en deux ans, 
-                l’acquisition de connaissances théoriques et de compétences professionnelles indispensables 
+  <p>La formation diplômante BTS Services Informatiques aux Organisations
+                (option&nbsp;: Solutions Logicielles et Applications Métiers) permet, en deux ans,
+                l’acquisition de connaissances théoriques et de compétences professionnelles indispensables
                 à la production et la fourniture de services informatiques.
             </p><br>
-            <p>Au cœur de cette formation se trouve l’acquisition d’un ensemble de savoirs 
+            <p>Au cœur de cette formation se trouve l’acquisition d’un ensemble de savoirs
                 spécifiques en informatique et notamment celle de compétences en vue d’assurer
-                le support et la mise à disposition de services informatiques&nbsp;; la gestion de données&nbsp;; 
+                le support et la mise à disposition de services informatiques&nbsp;; la gestion de données&nbsp;;
                 la conception, le développement et la maintenance corrective ou évolutive d’applications&nbsp;;
                 la cybersécurisation des solutions applicatives et de leur développement.
             </p><br>
             <p>
                 Cette formation permet également l’acquisition de compétences générales nécessaires pour évoluer
-                dans le monde de l’entreprise en dispensant un socle commun de connaissances en 
-                expression-communication, langue anglaise, culture économique, juridique et managériale, 
+                dans le monde de l’entreprise en dispensant un socle commun de connaissances en
+                expression-communication, langue anglaise, culture économique, juridique et managériale,
                 tout en offrant une première expérience professionnelle dans le cadre d’un stage de dix semaines.
             </p><br>
-            <p>Je me suis engagé dans ce parcours de formation dans la perspective d’une 
-                évolution professionnelle vers le métier de développeur d’applications. 
-                Il s’agit d’un métier qui m’attire tant par sa dimension concrète 
-                (sa finalité est la production d’un objet) qu’abstraite 
-                (il s’agit de traduire un besoin en langage informatique) sans oublier son aspect collectif 
-                (le travail d’équipe est essentiel). Une autre caractéristique du métier qui convient à 
-                mon envie d'apprendre en permanence, c’est qu’il faut sans cesse remettre en question 
+            <p>Je me suis engagé dans ce parcours de formation dans la perspective d’une
+                évolution professionnelle vers le métier de développeur d’applications.
+                Il s’agit d’un métier qui m’attire tant par sa dimension concrète
+                (sa finalité est la production d’un objet) qu’abstraite
+                (il s’agit de traduire un besoin en langage informatique) sans oublier son aspect collectif
+                (le travail d’équipe est essentiel). Une autre caractéristique du métier qui convient à
+                mon envie d'apprendre en permanence, c’est qu’il faut sans cesse remettre en question
                 ce que l’on sait déjà afin de mieux suivre le rythme très rapide des évolutions technologiques.
             </p>
 `
@@ -177,7 +177,7 @@ export class CvComponent {
       diplome: 'Diplôme Universitaire',
       mention: `Sciences cognitives pour l'éducation et la formation`,
       organisme: `UPEC`,
-      description: `<p>Sujet : <i>Effets de la mémoire de travail, de l’inhibition cognitive et de l’attention soutenue sur les 
+      description: `<p>Sujet : <i>Effets de la mémoire de travail, de l’inhibition cognitive et de l’attention soutenue sur les
                         performances en lecture-compréhension en fin de cycle 3</i>.</p><br>
                         Cette étude s’inscrit dans une approche confirmatoire des résultats de la
 recherche validés par des travaux récents comme ceux d’Arrington et al. (2014) : ceux-ci ont notamment montré l’existence de fortes
@@ -191,7 +191,7 @@ ou infirmer l’existence de ces corrélations.`
       diplome: 'Doctorat',
       mention: `Littératures comparées`,
       organisme: `Université Paul Valéry`,
-      description: `<p>Sujet : <i>La fiction mystériographique : émergence et 
+      description: `<p>Sujet : <i>La fiction mystériographique : émergence et
                         dissémination d'une poétique en France, en Grèce et en Grande-Bretagne au XIX<sup>e</sup> siècle.</i></p><br>
                         Suite au succès commercial des Mystères de Paris (1842-1843) d’Eugène Sue, les marchés littéraires de nombreux
                          pays ont été saturés par un nombre incalculable d’ouvrages qui proposaient d’infinies variations sur le titre
@@ -199,17 +199,17 @@ ou infirmer l’existence de ces corrélations.`
                            la « littérature des mystères » dont il a été à l’origine en France, en Grèce et en Grande-Bretagne,
                             cette thèse s’interroge sur la place qu’il convient d’accorder, dans l’histoire culturelle,
                              à cette « mystériographie » compulsive qui promettait aux lecteurs de leur révéler les secrets
-                              non seulement du monde contemporain, mais aussi de l’histoire, de la science, de la politique etc. 
-                              Tout en questionnant les conclusions d’une critique prolifique sur le phénomène qui en fait un genre 
-                              spécifique du domaine romanesque paralittéraire, cette thèse plaide pour une approche plus globale. 
-                              Pur produit d’une culture médiatique vouée à la représentation du monde, la « mystériographie » se 
-                              présente comme le creuset d’un nouvel imaginaire de la lecture appelé à devenir dominant avec l’entrée 
-                              progressive des pays européens, à partir des années 1860, dans la culture de masse : mêlant ancrage dans 
-                              le réel et sensationnalisme outrancier, la « fiction mystériographique » semblait déjà cristalliser les 
+                              non seulement du monde contemporain, mais aussi de l’histoire, de la science, de la politique etc.
+                              Tout en questionnant les conclusions d’une critique prolifique sur le phénomène qui en fait un genre
+                              spécifique du domaine romanesque paralittéraire, cette thèse plaide pour une approche plus globale.
+                              Pur produit d’une culture médiatique vouée à la représentation du monde, la « mystériographie » se
+                              présente comme le creuset d’un nouvel imaginaire de la lecture appelé à devenir dominant avec l’entrée
+                              progressive des pays européens, à partir des années 1860, dans la culture de masse : mêlant ancrage dans
+                              le réel et sensationnalisme outrancier, la « fiction mystériographique » semblait déjà cristalliser les
                               poétiques qui se situaient au cœur des lectures du plus grand nombre.</p>
                               <p><br>
                               <p>Cette thèse a été publiée aux Presses Universitaires de Limoges sous le titre :
-                    <i>La Littérature des mystères. Poétique historique d'un succès médiatique du XIX<sup>e</sup> siècle en France, 
+                    <i>La Littérature des mystères. Poétique historique d'un succès médiatique du XIX<sup>e</sup> siècle en France,
                     en Grèce et en Grande-Bretagne</i>, Médiatextes, Presses Universitaires de Limoges, 2020.</p>
                         `
     },
@@ -247,14 +247,14 @@ ou infirmer l’existence de ces corrélations.`
       mention: `Python`,
       organisme: `OpenEDG Python Institute`,
       description: `
-      <p>PCEP : Certified Entry-Level Python Programmer certification is a professional 
-      credential that measures the ability to accomplish coding tasks related to the essentials 
+      <p>PCEP : Certified Entry-Level Python Programmer certification is a professional
+      credential that measures the ability to accomplish coding tasks related to the essentials
       of programming in the Python language.</p> <br>
-      <p>A test candidate should demonstrate sufficient knowledge of the universal concepts of computer programming, 
-      the syntax and semantics of the Python language as well as the skills in resolving typical implementation 
+      <p>A test candidate should demonstrate sufficient knowledge of the universal concepts of computer programming,
+      the syntax and semantics of the Python language as well as the skills in resolving typical implementation
       challenges with the help of the Python Standard Library.</p><br>
-      <p>PCEP : Certified Entry-Level Python Programmer certification shows that the individual is familiar with 
-      universal computer programming concepts like data types, containers, functions, conditions, loops, exceptions, 
+      <p>PCEP : Certified Entry-Level Python Programmer certification shows that the individual is familiar with
+      universal computer programming concepts like data types, containers, functions, conditions, loops, exceptions,
       as well as Python programming language syntax, semantics, and the runtime environment.</p>
       `,
       link: { text: 'Lien vers le certificat PCPE', url: 'https://verify.openedg.org/?id=U9Ox.83aO.A5sc' },
@@ -264,13 +264,13 @@ ou infirmer l’existence de ces corrélations.`
       diplome: 'Certification',
       mention: `C#`,
       organisme: `Free Code Camp & Microsoft`,
-      description: `<p>The Foundational C# Certification from Microsoft is designed for individuals 
-      seeking to develop a strong understanding of C# programming. This certification provides essential 
+      description: `<p>The Foundational C# Certification from Microsoft is designed for individuals
+      seeking to develop a strong understanding of C# programming. This certification provides essential
       skills in coding, debugging, and application development, making it an excellent starting point for aspiring developers.</p><br>
-      <p>Through comprehensive lessons, learners will explore key concepts such as variables, data types, loops, and conditional 
-      statements. Additionally, the course covers the creation of methods, the implementation of logic, and fundamental 
+      <p>Through comprehensive lessons, learners will explore key concepts such as variables, data types, loops, and conditional
+      statements. Additionally, the course covers the creation of methods, the implementation of logic, and fundamental
       debugging techniques to ensure efficient program execution.</p><br>
-      <p>By completing this certification, candidates gain valuable hands-on experience with C#, preparing them for 
+      <p>By completing this certification, candidates gain valuable hands-on experience with C#, preparing them for
       further exploration in software development.<p><br>`,
       link: { text: 'Lien vers le certificat Foundational C# with Microsoft', url: 'https://www.freecodecamp.org/certification/filipposK/foundational-c-sharp-with-microsoft' }
     },
@@ -298,9 +298,18 @@ ou infirmer l’existence de ces corrélations.`
    * @param {string} datedeb - La date de début
    * @param {string} datefin - La date de fin
    * @param {string} description - La description de l'expérience
-   * 
+   *
    */
   experiences = [
+    {
+      poste: 'Développeur web',
+      employeur: 'Pyxiscience',
+      datedeb: '2025-07',
+      datefin: '2025-08',
+      description: 'Développeur stagiaire intégré dans une équipe de développeurs web en charge de ' +
+        'la maintenance corrective et évolutive de Pyxiscience, ' +
+        'application d\'apprentissage des mathématiques à destination des établissements scolaires et universitaires.'
+    },
     {
       poste: 'Professeur agrégé de lettres modernes',
       employeur: 'Education nationale',
@@ -314,7 +323,7 @@ ou infirmer l’existence de ces corrélations.`
       employeur: 'Université Paul Valéry',
       datedeb: '2013-09',
       datefin: '2016-09',
-      description: `Dans le cadre d\'un contrat doctoral : travaux dirigés et cours magistraux de littérature générale et comparée, et d\'expression-communication en licence. 
+      description: `Dans le cadre d\'un contrat doctoral : travaux dirigés et cours magistraux de littérature générale et comparée, et d\'expression-communication en licence.
       La majorité de mes travaux de recherche sont disponibles en ligne en accès ouvert.`
     }
   ]

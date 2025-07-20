@@ -20,14 +20,9 @@ export class HomeComponent {
    * @description Texte d'accueil affiché sur la page d'accueil
    */
   aboutItems = [
-    `Étudiant en informatique, docteur et professeur de lettres, j'aime apprendre, résoudre
-  des problèmes et travailler en équipe.`,
-    `J'ai une formation en programmation, sciences cognitives, pédagogie,
-  traduction et littératures comparées.`,
-    `En reconversion professionnelle vers le métier de développeur d'applications,
-  je cherche à concilier mes centres d'intérêt en concevant des
-  objets virtuels favorisant l'apprentissage, le traitement des textes, des langues et des données, à l'aide
-  de langages informatiques plus abstraits.`
+    `🎓 Docteur en lettres et également diplômé en sciences cognitives et en traduction, je mets à profit mon parcours académique pour développer des outils numériques au service de l’éducation.`,
+    `💻 Étudiant en informatique et spécialisé en développement web, je conçois des applications intuitives qui facilitent le quotidien des enseignants et des apprenants.`,
+    `📚 Avec plus de dix ans d’expérience dans l’enseignement, allant du secondaire à l’université, j’ai développé une compréhension fine des défis pédagogiques et des besoins du terrain. Mes projets et collaborations actuels visent à répondre concrètement à ces défis grâce à des solutions web innovantes.`
   ];
 
   /**
@@ -37,16 +32,16 @@ export class HomeComponent {
   techs = [
     {
       title: 'Langages',
-      texttechs: ['C#', 'Python', 'Java', 'TypeScript', 'HTML', 'CSS', 'PHP'],
+      texttechs: ['C#', 'Python', 'Java', 'Javacript', 'HTML', 'CSS', 'PHP'],
     },
     {
       title: 'Frameworks',
-      texttechs: ['Angular', 'Bootstrap', 'Tailwind'],
-  
+      texttechs: ['Angular', 'React', 'NestJS'],
+
     },
     {
       title: 'IDE',
-      texttechs: ['Visual Studio', 'VS Code', 'Eclipse', 'PyCharm'],
+      texttechs: ['Visual Studio', 'VS Code', 'Eclipse', 'PyCharm', 'Webstorm'],
     },
     {
       title: 'SGBD',
@@ -59,7 +54,7 @@ export class HomeComponent {
     {
       title: 'Collaboration',
       texttechs: ['GitHub'],
-    }, 
+    },
   ];
 
 }

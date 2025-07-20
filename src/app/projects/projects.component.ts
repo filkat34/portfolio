@@ -35,21 +35,21 @@ export class ProjectsComponent {
       repolink: 'https://github.com/filkat34/TriBibliv2'
     },
     {
-      title: 'LitToolkit',
-      description: 'Application Web comportant un ensemble d\'outils pour l\'enseignement des lettres.',
-      techs: ['Angular', 'Bootstrap', 'TypeScript'],
-      repolink: 'https://github.com/filkat34/LitToolkit',
+      title: 'LisiCalc',
+      description: 'Calculateur d\'indices de lisibilité pour textes français.',
+      techs: ['React', 'Tailwindcss', 'TypeScript'],
+      repolink: 'https://github.com/filkat34/lisicalc-react',
     },
     {
       title: 'Portfolio',
       description: 'Mon portfolio d\'étudiant en développement.',
-      techs: ['Angular', 'TypeScript', 'Tailwind'],
+      techs: ['Angular', 'TypeScript', 'Tailwindcss'],
       repolink: 'https://github.com/filkat34/portfolio'
     },
     {
       title: 'Repartitor',
       description: 'Application de gestion permettant de constituer les services d\'une équipe d\'enseignement.',
-      techs: ['Angular', 'TypeScript', 'Tailwind', 'IndexedDB'],
+      techs: ['Angular', 'TypeScript', 'Tailwindcss', 'IndexedDB'],
       repolink: 'https://github.com/filkat34/repartitor-ng'
     }
   ]

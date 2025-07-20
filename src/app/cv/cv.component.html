@@ -44,8 +44,6 @@
                 <h5 class="text-lg text-center mb-2">{{ experience.employeur }}
                 </h5>
                 <!-- Dates -->
-                <h5 class="text-lg text-center mb-2">{{ experience.datedeb.slice(0, 4) }} - {{ experience.datefin ===
-                  'présent' ? 'présent' : experience.datefin.slice(0, 4) }}</h5>
                 <span
                   *ngIf="getExperienceDuration(experience.datedeb, (experience.datefin && experience.datefin !== 'présent') ? experience.datefin : getDateActuelle())"
                   class="block text-center text-sm">
